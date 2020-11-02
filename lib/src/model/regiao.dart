@@ -1,3 +1,4 @@
+/// Classe que modela uma Região na API do IBGE
 class Regiao {
   int id;
   String sigla;

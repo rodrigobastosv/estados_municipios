@@ -1,5 +1,6 @@
 import 'microrregiao.dart';
 
+/// Classe que modela um Município na API do IBGE
 class Municipio {
   int id;
   String nome;

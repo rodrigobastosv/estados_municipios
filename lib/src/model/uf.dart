@@ -1,5 +1,6 @@
 import 'regiao.dart';
 
+/// Classe que modela uma UF na API do IBGE
 class UF {
   int id;
   String sigla;

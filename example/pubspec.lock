@@ -53,9 +53,9 @@ packages:
   estados_municipios:
     dependency: "direct main"
     description:
-      path: ".."
-      relative: true
-    source: path
+      name: estados_municipios
+      url: "https://pub.dartlang.org"
+    source: hosted
     version: "1.0.0"
   fake_async:
     dependency: transitive

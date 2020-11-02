@@ -1,5 +1,6 @@
 import 'regiao.dart';
 
+/// Classe que modela um Estado na API do IBGE
 class Estado {
   int id;
   String sigla;
@@ -17,8 +18,7 @@ class Estado {
     id = json['id'];
     sigla = json['sigla'];
     nome = json['nome'];
-    regiao =
-        json['regiao'] != null ? Regiao.fromJson(json['regiao']) : null;
+    regiao = json['regiao'] != null ? Regiao.fromJson(json['regiao']) : null;
   }
 
   Map<String, dynamic> toJson() {

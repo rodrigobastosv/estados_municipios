@@ -1,5 +1,6 @@
 import 'mesorregiao.dart';
 
+/// Classe que modela uma Microregião na API do IBGE
 class Microrregiao {
   int id;
   String nome;

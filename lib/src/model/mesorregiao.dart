@@ -1,5 +1,6 @@
 import 'uf.dart';
 
+/// Classe que modela uma Mesoregião na API do IBGE
 class Mesorregiao {
   int id;
   String nome;
