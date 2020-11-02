@@ -1,0 +1,1 @@
+class NenhumMunicipioEncontradoException implements Exception {}
