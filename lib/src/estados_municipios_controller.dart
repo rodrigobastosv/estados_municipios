@@ -11,7 +11,8 @@ class EstadosMunicipiosController {
   /// Busca todos os estados brasileiros
   Future<List<Estado>> buscaTodosEstados() async {
     try {
-      final response = await http.get(urlBase);
+      final uri = Uri.parse(urlBase);
+      final response = await http.get(uri);
       if (response.statusCode == 200) {
         final decodedResponse = jsonDecode(response.body) as List;
         return List.generate(
@@ -40,7 +41,8 @@ class EstadosMunicipiosController {
   /// buscaMunicipiosPorEstado('sp')
   Future<List<Municipio>> buscaMunicipiosPorEstado(String siglaEstado) async {
     try {
-      final response = await http.get('$urlBase/$siglaEstado/municipios');
+      final uri = Uri.parse('$urlBase/$siglaEstado/municipios');
+      final response = await http.get(uri);
       if (response.statusCode == 200) {
         final decodedResponse = jsonDecode(response.body) as List;
         if (decodedResponse.isEmpty) {

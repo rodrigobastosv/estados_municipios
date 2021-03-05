@@ -1,4 +1,8 @@
-## [1.0.1+2]
+# [2.0.0]
+
+- Migrando pra null safe
+
+# [1.0.1+2]
 
 - Ajustando localização library 
 

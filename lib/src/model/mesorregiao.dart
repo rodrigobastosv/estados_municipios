@@ -2,24 +2,30 @@ import 'uf.dart';
 
 /// Classe que modela uma Mesoregião na API do IBGE
 class Mesorregiao {
-  int id;
-  String nome;
-  UF uF;
+  int? id;
+  String? nome;
+  UF? uf;
 
-  Mesorregiao({this.id, this.nome, this.uF});
+  Mesorregiao({
+    this.id,
+    this.nome,
+    this.uf,
+  });
 
+  /// Método para deserializar o objeto
   Mesorregiao.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     nome = json['nome'];
-    uF = json['UF'] != null ? UF.fromJson(json['UF']) : null;
+    uf = json['UF'] != null ? UF.fromJson(json['UF']) : null;
   }
 
+  /// Método para serializar o objeto
   Map<String, dynamic> toJson() {
-    final data = {};
+    final data = <String, dynamic>{};
     data['id'] = id;
     data['nome'] = nome;
-    if (uF != null) {
-      data['UF'] = uF.toJson();
+    if (uf != null) {
+      data['UF'] = uf!.toJson();
     }
     return data;
   }
