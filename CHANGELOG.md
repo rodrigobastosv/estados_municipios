@@ -1,3 +1,7 @@
+# [2.0.0+1]
+
+- Formatando arquivos
+
 # [2.0.0]
 
 - Migrando pra null safe

@@ -1,4 +1,3 @@
-
 import 'package:estados_municipios/estados_municipios.dart';
 
 void main() async {

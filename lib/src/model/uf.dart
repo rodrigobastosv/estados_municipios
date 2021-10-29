@@ -7,7 +7,12 @@ class UF {
   String? nome;
   Regiao? regiao;
 
-  UF({this.id, this.sigla, this.nome, this.regiao,});
+  UF({
+    this.id,
+    this.sigla,
+    this.nome,
+    this.regiao,
+  });
 
   /// Método para desserializar o objeto
   UF.fromJson(Map<String, dynamic> json) {
