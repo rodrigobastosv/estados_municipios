@@ -1,5 +1,7 @@
 [![style: effective dart](https://img.shields.io/badge/style-effective_dart-40c4ff.svg)](https://github.com/tenhobi/effective_dart)
 
+<a href="https://www.buymeacoffee.com/rodrigobastosv" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
+
 Pacote criado para ser uma abstração e facilitar o uso da API do [IBGE][ibge] para descobrimento de estados e de municipios;
 
 Com este pacote você pode buscar todos os estados do Brasil, e além disso pode
