@@ -1,3 +1,7 @@
+# [2.0.0+2]
+
+- Ajustando README
+
 # [2.0.0+1]
 
 - Formatando arquivos
