@@ -5,6 +5,8 @@ void main() async {
   final estados = await controller.buscaTodosEstados();
   final estado = estados[0];
   print(estado);
-  final municipios = await controller.buscaMunicipiosPorEstado(estado.sigla);
-  print(municipios);
+  for (final e in estados) {
+    final municipios = await controller.buscaMunicipiosPorEstado(e.sigla);
+    print(municipios);
+  }
 }
