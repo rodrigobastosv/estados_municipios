@@ -14,7 +14,6 @@ class Municipio {
 
   /// Método para desserializar o objeto
   Municipio.fromJson(Map<String, dynamic> json) {
-    print(json['id'].runtimeType);
     id = json['id'];
     nome = json['nome'];
     microrregiao = json['microrregiao'] != null

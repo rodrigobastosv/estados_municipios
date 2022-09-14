@@ -1,3 +1,7 @@
+# [2.0.1+1]
+
+- Removendo codigo de debug
+
 # [2.0.1]
 
 - Fixing type of id
