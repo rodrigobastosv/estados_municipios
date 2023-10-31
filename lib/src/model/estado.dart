@@ -1,48 +1,45 @@
+import 'constants/api_keys.dart';
 import 'regiao.dart';
 
 /// Classe que modela um Estado na API do IBGE
 class Estado {
   /// Id do estado IBGE
-  int? id;
+  final int id;
 
   /// Sigla identificadora do estado
-  String? sigla;
+  final String sigla;
 
   /// Nome do estado
-  String? nome;
+  final String nome;
 
   /// Região do estado
-  Regiao? regiao;
+  final Regiao regiao;
 
   Estado({
-    this.id,
-    this.sigla,
-    this.nome,
-    this.regiao,
+    required this.id,
+    required this.sigla,
+    required this.nome,
+    required this.regiao,
   });
 
   /// Método para desserializar o objeto
-  Estado.fromJson(Map<String, dynamic> json) {
-    id = json['id'];
-    sigla = json['sigla'];
-    nome = json['nome'];
-    regiao = json['regiao'] != null ? Regiao.fromJson(json['regiao']) : null;
-  }
+  factory Estado.fromJson(Map<String, dynamic> json) => Estado(
+        id: json[ApiKeys.id],
+        sigla: json[ApiKeys.sigla],
+        nome: json[ApiKeys.nome],
+        regiao: Regiao.fromJson(
+          json[ApiKeys.regiao],
+        ),
+      );
 
   /// Método para serializar o objeto
-  Map<String, dynamic> toJson() {
-    final data = <String, dynamic>{};
-    data['id'] = id;
-    data['sigla'] = sigla;
-    data['nome'] = nome;
-    if (regiao != null) {
-      data['regiao'] = regiao!.toJson();
-    }
-    return data;
-  }
+  Map<String, dynamic> toJson() => <String, dynamic>{
+        ApiKeys.id: id,
+        ApiKeys.sigla: sigla,
+        ApiKeys.nome: nome,
+        ApiKeys.regiao: regiao
+      };
 
   @override
-  String toString() {
-    return '''Estado{sigla: $sigla, nome: $nome}''';
-  }
+  String toString() => '''Estado{sigla: $sigla, nome: $nome}''';
 }

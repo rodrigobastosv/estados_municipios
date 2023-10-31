@@ -1,41 +1,38 @@
+import 'constants/api_keys.dart';
 import 'regiao.dart';
 
 /// Classe que modela uma UF na API do IBGE
 class UF {
-  int? id;
-  String? sigla;
-  String? nome;
-  Regiao? regiao;
+  final int id;
+  final String sigla;
+  final String nome;
+  final Regiao regiao;
 
   UF({
-    this.id,
-    this.sigla,
-    this.nome,
-    this.regiao,
+    required this.id,
+    required this.sigla,
+    required this.nome,
+    required this.regiao,
   });
 
   /// Método para desserializar o objeto
-  UF.fromJson(Map<String, dynamic> json) {
-    id = json['id'];
-    sigla = json['sigla'];
-    nome = json['nome'];
-    regiao = json['regiao'] != null ? Regiao.fromJson(json['regiao']) : null;
-  }
+  factory UF.fromJson(Map<String, dynamic> json) => UF(
+        id: json[ApiKeys.id],
+        sigla: json[ApiKeys.sigla],
+        nome: json[ApiKeys.nome],
+        regiao: Regiao.fromJson(
+          json[ApiKeys.regiao],
+        ),
+      );
 
   /// Método para serializar o objeto
-  Map<String, dynamic> toJson() {
-    final data = <String, dynamic>{};
-    data['id'] = id;
-    data['sigla'] = sigla;
-    data['nome'] = nome;
-    if (regiao != null) {
-      data['regiao'] = regiao!.toJson();
-    }
-    return data;
-  }
+  Map<String, dynamic> toJson() => <String, dynamic>{
+        ApiKeys.id: id,
+        ApiKeys.sigla: sigla,
+        ApiKeys.nome: nome,
+        ApiKeys.regiao: regiao
+      };
 
   @override
-  String toString() {
-    return '''UF{nome: $nome, sigla: $sigla}''';
-  }
+  String toString() => '''UF{nome: $nome, sigla: $sigla}''';
 }

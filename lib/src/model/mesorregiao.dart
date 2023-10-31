@@ -1,37 +1,34 @@
+import 'constants/api_keys.dart';
 import 'uf.dart';
 
 /// Classe que modela uma Mesoregião na API do IBGE
 class Mesorregiao {
-  int? id;
-  String? nome;
-  UF? uf;
+  final int id;
+  final String nome;
+  final UF uf;
 
   Mesorregiao({
-    this.id,
-    this.nome,
-    this.uf,
+    required this.id,
+    required this.nome,
+    required this.uf,
   });
 
   /// Método para deserializar o objeto
-  Mesorregiao.fromJson(Map<String, dynamic> json) {
-    id = json['id'];
-    nome = json['nome'];
-    uf = json['UF'] != null ? UF.fromJson(json['UF']) : null;
-  }
+  factory Mesorregiao.fromJson(Map<String, dynamic> json) => Mesorregiao(
+        id: json[ApiKeys.id],
+        nome: json[ApiKeys.nome],
+        uf: UF.fromJson(
+          json[ApiKeys.uf],
+        ),
+      );
 
   /// Método para serializar o objeto
-  Map<String, dynamic> toJson() {
-    final data = <String, dynamic>{};
-    data['id'] = id;
-    data['nome'] = nome;
-    if (uf != null) {
-      data['UF'] = uf!.toJson();
-    }
-    return data;
-  }
+  Map<String, dynamic> toJson() => <String, dynamic>{
+        ApiKeys.id: id,
+        ApiKeys.nome: nome,
+        ApiKeys.uf: uf.toJson(),
+      };
 
   @override
-  String toString() {
-    return '''Mesorregiao{nome: $nome}''';
-  }
+  String toString() => '''Mesorregiao{nome: $nome}''';
 }

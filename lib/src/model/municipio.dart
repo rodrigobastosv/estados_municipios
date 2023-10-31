@@ -1,39 +1,34 @@
+import 'constants/api_keys.dart';
 import 'microrregiao.dart';
 
 /// Classe que modela um Município na API do IBGE
 class Municipio {
-  int? id;
-  String? nome;
-  Microrregiao? microrregiao;
+  final int id;
+  final String nome;
+  final Microrregiao microrregiao;
 
   Municipio({
-    this.id,
-    this.nome,
-    this.microrregiao,
+    required this.id,
+    required this.nome,
+    required this.microrregiao,
   });
 
   /// Método para desserializar o objeto
-  Municipio.fromJson(Map<String, dynamic> json) {
-    id = json['id'];
-    nome = json['nome'];
-    microrregiao = json['microrregiao'] != null
-        ? Microrregiao.fromJson(json['microrregiao'])
-        : null;
-  }
+  factory Municipio.fromJson(Map<String, dynamic> json) => Municipio(
+        id: json[ApiKeys.id],
+        nome: json[ApiKeys.nome],
+        microrregiao: Microrregiao.fromJson(
+          json[ApiKeys.microrregiao],
+        ),
+      );
 
   /// Método para serializar o objeto
-  Map<String, dynamic> toJson() {
-    final data = <String, dynamic>{};
-    data['id'] = id;
-    data['nome'] = nome;
-    if (microrregiao != null) {
-      data['microrregiao'] = microrregiao!.toJson();
-    }
-    return data;
-  }
+  Map<String, dynamic> toJson() => <String, dynamic>{
+        ApiKeys.id: id,
+        ApiKeys.nome: nome,
+        ApiKeys.microrregiao: microrregiao.toJson(),
+      };
 
   @override
-  String toString() {
-    return '''Municipio{nome: $nome}''';
-  }
+  String toString() => '''Municipio{nome: $nome}''';
 }

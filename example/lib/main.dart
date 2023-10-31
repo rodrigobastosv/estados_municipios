@@ -3,10 +3,11 @@ import 'package:estados_municipios/estados_municipios.dart';
 void main() async {
   final controller = EstadosMunicipiosController();
   final estados = await controller.buscaTodosEstados();
-  final estado = estados[0];
-  print(estado);
-  for (final e in estados) {
-    final municipios = await controller.buscaMunicipiosPorEstado(e.sigla);
+
+  for (var estado in estados) {
+    print(estado);
+
+    final municipios = await controller.buscaMunicipiosPorEstado(estado.sigla);
     print(municipios);
   }
 }
