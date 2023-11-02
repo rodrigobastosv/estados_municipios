@@ -1,6 +1,6 @@
 name: estados_municipios
 description: Pacote para facilitar e agilizar o processo de escolha de municipios e estados brasileiros. Todas as informações são tiradas da API do IBGE.
-version: 2.0.1+1
+version: 2.0.2
 homepage: https://github.com/rodrigobastosv/estados_municipios
 
 environment:

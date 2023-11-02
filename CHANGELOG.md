@@ -1,3 +1,7 @@
+# [2.0.2]
+
+- Atualizacao de dependencias
+ 
 # [2.0.1+1]
 
 - Removendo codigo de debug
