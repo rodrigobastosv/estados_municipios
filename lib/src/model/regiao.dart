@@ -1,33 +1,31 @@
+import 'constants/api_keys.dart';
+
 /// Classe que modela uma Região na API do IBGE
 class Regiao {
-  int? id;
-  String? sigla;
-  String? nome;
+  final int id;
+  final String sigla;
+  final String nome;
 
   Regiao({
-    this.id,
-    this.sigla,
-    this.nome,
+    required this.id,
+    required this.sigla,
+    required this.nome,
   });
 
   /// Método para deserializar o objeto
-  Regiao.fromJson(Map<String, dynamic> json) {
-    id = json['id'];
-    sigla = json['sigla'];
-    nome = json['nome'];
-  }
+  factory Regiao.fromJson(Map<String, dynamic> json) => Regiao(
+        id: json[ApiKeys.id],
+        sigla: json[ApiKeys.sigla],
+        nome: json[ApiKeys.nome],
+      );
 
   /// Método para serializar o objeto
-  Map<String, dynamic> toJson() {
-    final data = <String, dynamic>{};
-    data['id'] = id;
-    data['sigla'] = sigla;
-    data['nome'] = nome;
-    return data;
-  }
+  Map<String, dynamic> toJson() => <String, dynamic>{
+        ApiKeys.id: id,
+        ApiKeys.sigla: sigla,
+        ApiKeys.nome: nome,
+      };
 
   @override
-  String toString() {
-    return '''Regiao{sigla: $sigla, nome: $nome}''';
-  }
+  String toString() => '''Regiao{sigla: $sigla, nome: $nome}''';
 }
